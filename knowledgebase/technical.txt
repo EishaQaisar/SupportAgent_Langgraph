@@ -1,0 +1,10 @@
+Restart your device and try reinstalling the application if errors persist.
+Ensure you are running the latest version of the app before troubleshooting.
+Clear your app cache if you experience frequent crashes.
+Check your internet connection if you cannot log in.
+Some features may not work on outdated operating systems.
+Reinstalling does not delete your data if you are signed in.
+Enable notifications in device settings to receive updates.
+Update your graphics drivers if the app shows blank screens.
+If files fail to upload, check that they are under the 50MB limit.
+Our app requires at least 2GB RAM for optimal performance.

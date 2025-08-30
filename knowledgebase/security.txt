@@ -1,0 +1,10 @@
+Never share your password with anyone, including support staff.
+Enable two-factor authentication (2FA) from your account settings.
+Reset your password immediately if you suspect unauthorized access.
+Check the login activity page to monitor active sessions.
+We will never ask for your credit card details over email.
+Suspicious links should be reported to the security team.
+Change your password every 90 days for stronger protection.
+Enable login alerts to be notified of sign-ins from new devices.
+Security patches are applied automatically during maintenance windows.
+Our system encrypts all data in transit and at rest.

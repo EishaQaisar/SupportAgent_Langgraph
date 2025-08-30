@@ -1,0 +1,20 @@
+# LangGraph CLI & runtime
+langgraph-cli[inmem]>=0.4.0
+
+# Hugging Face Hub for zero-shot classification
+huggingface-hub>=0.16.4
+
+# Sentence Transformers for embeddings
+sentence-transformers>=2.2.2
+
+# FAISS for vector similarity search
+faiss-cpu>=1.7.4
+
+# NumPy for numerical operations
+numpy>=1.26.5
+
+# Python-dotenv for environment variable loading
+python-dotenv>=1.1.1
+
+# Optional: typing utilities
+dataclasses; python_version < "3.7"

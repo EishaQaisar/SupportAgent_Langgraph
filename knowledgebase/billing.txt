@@ -1,0 +1,53 @@
+You can view and download invoices from the billing portal.
+I'll give you the refund today.
+To update your payment method, go to Account Settings > Billing.
+Contact billing support if you see duplicate charges on your statement.
+Taxes are automatically calculated based on your billing address.
+Promotional credits are applied before charging your payment method.
+Failed payments will be retried automatically up to 3 times.
+Billing history can be exported in CSV format from the portal.
+Annual subscription discounts are only available on upfront payments.
+To change your billing currency, contact our finance team.
+Your refund will be processed shortly.
+Late fees may apply if invoices are unpaid beyond the due date.
+Partial refunds are not supported for mid-cycle cancellations.
+If your card is declined, update your payment method immediately.
+Wire transfers are only available for enterprise customers.
+Billing disputes must be raised within 30 days of charge.
+If you cancel before the renewal date, no additional fees will apply.
+Receipts are emailed automatically after each successful payment.
+Gift card balances cannot be applied to subscription invoices.
+You can switch between monthly and annual billing cycles at any time.
+VAT numbers must be provided during checkout for tax exemptions.
+Downloadable PDFs are available for all past invoices.
+Invoices older than 18 months are archived and require support to access.
+Refunds for promotional offers are not permitted.
+Auto-renewal can be turned off in Billing Settings.
+Multiple payment methods are not supported; only one active card at a time.
+Overdue accounts may be suspended until payment is cleared.
+Exchange rates for international payments are determined by your bank.
+Custom billing arrangements must be approved by the finance team.
+Sales tax is shown as a separate line item on each invoice.
+If you downgrade your plan, credits are applied to future invoices.
+Manual invoice requests must be submitted through the support portal.
+Refund requests may take up to 5–7 business days to appear on your statement.
+Billing alerts are sent when your payment method is about to expire.
+Credits expire 12 months after being issued.
+Bank account payments may take up to 5 days to process.
+If you upgrade mid-cycle, charges are prorated automatically.
+Service will be interrupted if payment is not received within 15 days.
+Chargebacks may result in account suspension.
+Corporate customers can request consolidated invoices across departments.
+Failed automatic retries require manual intervention after the third attempt.
+Invoicing is available in USD, EUR, GBP, and JPY.
+Discount codes cannot be combined with existing promotions.
+The system does not support split billing across multiple teams.
+Resellers must handle billing inquiries directly with their end customers.
+Certain regions require additional compliance documentation for invoices.
+Refund processing time depends on your payment provider.
+Support cannot override tax rules set by law.
+Invoices can include purchase order numbers if provided at checkout.
+Payment receipts include both subtotal and total breakdowns.
+Transaction IDs can be used to track disputed charges.
+Recurring billing ensures uninterrupted access to your subscription.
+Automatic invoice reminders are sent 7 days before due date.
