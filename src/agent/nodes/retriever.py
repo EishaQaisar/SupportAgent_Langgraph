@@ -82,7 +82,7 @@ def populate_db():
 
     print(f"✅ Added {len(all_docs)} documents to FAISS index.")
 
-def retrieve_context(category: str, subject: str, description: str, top_k: int = 3, attempt: int = 1, category_changed: bool = False):
+def retrieve_context(category: str, subject: str, description: str, top_k: int = 3, attempt: int = 1, classification_scores: list = None):
     query_text = f"{subject} {description}"
     query_embedding = embed_model.encode([query_text]).astype("float32")
 
@@ -95,12 +95,12 @@ def retrieve_context(category: str, subject: str, description: str, top_k: int =
 
     distances, indices = temp_index.search(query_embedding, len(category_docs))
 
-    print("retriever attempt:", attempt, "| category_changed:", category_changed)
+    print("retriever attempt:", attempt)
 
-    if category_changed:
-        selected = indices[0][:top_k]   # reset to best matches
-    elif attempt == 0:
+    print(classification_scores)
+    if attempt == 0 or attempt==2: #if attempt is 2, it means that category i changed
         selected = indices[0][:top_k]   # best matches
+
     else:
         selected = indices[0][top_k:top_k+top_k]  # weaker matches
 

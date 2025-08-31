@@ -1,10 +1,41 @@
-Restart your device and try reinstalling the application if errors persist.
-Ensure you are running the latest version of the app before troubleshooting.
-Clear your app cache if you experience frequent crashes.
-Check your internet connection if you cannot log in.
-Some features may not work on outdated operating systems.
-Reinstalling does not delete your data if you are signed in.
-Enable notifications in device settings to receive updates.
-Update your graphics drivers if the app shows blank screens.
-If files fail to upload, check that they are under the 50MB limit.
-Our app requires at least 2GB RAM for optimal performance.
+Restart your device and try reinstalling the application if errors persist.  
+Ensure you are running the latest version of the app before troubleshooting.  
+Clear your app cache if you experience frequent crashes.  
+Check your internet connection if you cannot log in.  
+Some features may not work on outdated operating systems.  
+Reinstalling does not delete your data if you are signed in.  
+Enable notifications in device settings to receive updates.  
+Update your graphics drivers if the app shows blank screens.  
+If files fail to upload, check that they are under the 50MB limit.  
+Our app requires at least 2GB RAM for optimal performance.  
+Restart your router if you encounter frequent connectivity issues.  
+Verify that your firewall or antivirus is not blocking the app.  
+Try switching between Wi-Fi and mobile data to isolate connection problems.  
+Disable battery saver mode if push notifications are delayed.  
+Ensure background app permissions are enabled for full functionality.  
+Log out and log back in to refresh your account session.  
+Force close the app and reopen it if the interface becomes unresponsive.  
+Make sure your device clock is set to automatic time and date.  
+If sound is not working, check both device and in-app volume settings.  
+Run the app in safe mode to identify conflicts with other software.  
+
+Check available device storage if downloads or updates fail.  
+Disable VPNs or proxies if you cannot access certain features.  
+Use the web version of the app if the mobile app malfunctions.  
+Perform a clean reinstall by removing leftover app data after uninstalling.  
+If the camera does not work, ensure camera permissions are enabled.  
+Try reducing video resolution settings if streaming is laggy.  
+If updates are stuck, clear the app store’s cache and retry.  
+Restart your computer after installing updates for full effect.  
+If messages are delayed, ensure background sync is enabled.  
+Switch to a different browser if the web app is not loading correctly.  
+If login fails, reset your password and attempt again.  
+Disable extensions or add-ons that may conflict with the web app.  
+If you cannot receive emails, check your spam or junk folder.  
+Check our system status page for ongoing outages before troubleshooting further.  
+If files do not sync, ensure you are connected to a stable network.  
+Reduce multitasking if the app slows down on low-memory devices.  
+If your device overheats, close unused apps running in the background.  
+Use an official charging cable to avoid performance issues on mobile devices.  
+Check whether your account has sufficient permissions for restricted features.  
+Contact support with screenshots if the issue continues after basic troubleshooting.  

@@ -1,10 +1,40 @@
-Never share your password with anyone, including support staff.
-Enable two-factor authentication (2FA) from your account settings.
-Reset your password immediately if you suspect unauthorized access.
-Check the login activity page to monitor active sessions.
-We will never ask for your credit card details over email.
-Suspicious links should be reported to the security team.
-Change your password every 90 days for stronger protection.
-Enable login alerts to be notified of sign-ins from new devices.
-Security patches are applied automatically during maintenance windows.
-Our system encrypts all data in transit and at rest.
+Never share your password with anyone, including support staff.  
+Enable two-factor authentication (2FA) from your account settings.  
+Reset your password immediately if you suspect unauthorized access.  
+Check the login activity page to monitor active sessions.  
+We will never ask for your credit card details over email.  
+Suspicious links should be reported to the security team.  
+Change your password every 90 days for stronger protection.  
+Enable login alerts to be notified of sign-ins from new devices.  
+Security patches are applied automatically during maintenance windows.  
+Our system encrypts all data in transit and at rest.  
+Always verify the website URL before entering login credentials.  
+Do not reuse the same password across multiple services.  
+Use a password manager to create and store strong, unique passwords.  
+Enable biometric login (fingerprint or face recognition) where supported.  
+Never download attachments from unknown or suspicious emails.  
+Our support staff will never request your full password or PIN.  
+Use only official app stores (Google Play, Apple App Store) for downloads.  
+Keep your operating system and apps updated to the latest version.  
+Avoid using public Wi-Fi for logging into your account.  
+Use a VPN when accessing your account on shared or untrusted networks.  
+Logout of your account when using shared or public computers.  
+Do not save login credentials on browsers of shared devices.  
+Review permissions of connected third-party applications regularly.  
+Revoke access to apps or integrations you no longer use.  
+Enable device-level security features such as screen locks.  
+We continuously monitor our systems for unusual activity.  
+Report phishing attempts immediately to security@example.com.  
+We conduct regular penetration testing to strengthen system defenses.  
+Our platform is compliant with international data protection standards.  
+Your personal information is never shared with third parties without consent.  
+We follow industry best practices for secure software development.  
+Employees undergo regular cybersecurity awareness training.  
+Backups are encrypted and stored in secure, geographically distributed data centers.  
+Access to customer data is restricted to authorized personnel only.  
+Multi-factor authentication is mandatory for all admin accounts.  
+We log and audit all access to sensitive systems.  
+Incident response procedures are in place for potential breaches.  
+If we detect suspicious activity, we may temporarily lock your account.  
+You can whitelist trusted IP addresses for additional account security.  
+Our bug bounty program rewards researchers for reporting vulnerabilities.  

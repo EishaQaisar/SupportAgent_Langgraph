@@ -25,7 +25,7 @@ Definitions:
 - Billing: Anything about payments, invoices, refunds, subscriptions, or charges
 - Technical: Bugs, errors, features not working, installation issues
 - Security: Account breaches, password reset, suspicious activity, account hacked
-- General: Other inquiries not covered above or like talking to the support team
+- General: Questions or requests that do not involve billing, technical issues, or security concerns. This may include product information, company policies, feature inquiries, account preferences, complaints or general communication with the support team.
 
 Ticket:
 Subject: {subject}
@@ -39,7 +39,7 @@ Description: {description}
 
         # pick the label with highest score
         best_label = result["labels"][0]
-        return best_label
+        return best_label,result["labels"]
     except Exception as e:
         print(f"[ERROR] Classification failed: {e}")
         return "General"

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # New LangGraph Project
 
 [![CI](https://github.com/langchain-ai/new-langgraph-project/actions/workflows/unit-tests.yml/badge.svg)](https://github.com/langchain-ai/new-langgraph-project/actions/workflows/unit-tests.yml)
@@ -59,3 +60,6 @@ For more advanced features and examples, refer to the [LangGraph documentation](
 
 LangGraph Studio also integrates with [LangSmith](https://smith.langchain.com/) for more in-depth tracing and collaboration with teammates, allowing you to analyze and optimize your chatbot's performance.
 
+=======
+# SupportAgent_Langgraph
+>>>>>>> ab6955f186df583065b31fe8ce5c392893770fd7
