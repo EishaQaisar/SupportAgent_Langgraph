@@ -15,7 +15,7 @@ The agent can classify support tickets, retrieve relevant knowledge base docs, g
 - **Streamlit UI** → Interactive demo interface for testing the agent.  
 
 ---
-##Langraph Setup Instructions 
+## Langraph Setup Instructions 
 Follow these steps to set up a LangGraph development environment locally:
 
 ### 1. Install LangGraph CLI
@@ -44,7 +44,7 @@ Copy .env.example to .env and add your API keys:
 LANGSMITH_API_KEY=your_langsmith_key
 ```
 
-## ⚙️ Setup Instructions
+## ⚙️Project Setup Instructions
 
 ### 1. Clone the Repository
 ```bash
@@ -68,7 +68,7 @@ pip install -r requirements.txt
 
 ### 4. Environment Variables
 
-Create a .env file in the project root with the following keys:
+In the .env file (in the project root), add the following keys:
 
 ```bash
 OPENROUTER_API_KEY=your_openrouter_key
