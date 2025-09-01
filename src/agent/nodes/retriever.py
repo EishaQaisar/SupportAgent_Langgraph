@@ -1,45 +1,17 @@
-# src/agent/nodes/retriever.py
 import numpy as np
 import faiss
 from sentence_transformers import SentenceTransformer
 import os
 
-# Load sentence-transformer model
 embed_model = SentenceTransformer("all-MiniLM-L6-v2")
 
 KB_folder='knowledgebase'
 
-# Knowledge base
-knowledge_base = {
-    "Billing": [
-        "Shutup",
-        "You can view and download invoices from the billing portal.",
-        "Refunds are processed within 5–7 business days.",
-        "Contact billing support for double charges or payment failures."
-    ],
-    "Technical": [
-        "Restart your device and try reinstalling the application.",
-        "Ensure your app version is up to date.",
-        "Clear the cache if you face frequent crashes."
-    ],
-    "Security": [
-        "Shutup",
-        "Never share your password with anyone.",
-        "Enable 2FA in account settings for extra protection.",
-        "Report suspicious login attempts to security team."
-    ],
-    "General": [
-        "Visit our Help Center for FAQs.",
-        "Our customer support is available 24/7.",
-        "You can update your profile information anytime in settings."
-    ]
-}
 
-# We'll store embeddings and mapping to docs
 category_indices = {}
 all_docs = []
-all_embeddings = None  # final numpy array
-faiss_index = None     # global FAISS index
+all_embeddings = None  
+faiss_index = None     
 
 def load_kb():
     kb={}
@@ -52,7 +24,7 @@ def load_kb():
     return kb
         
 def populate_db():
-    print("📥 Populating FAISS DB with embeddings...")
+    print(" Populating FAISS DB with embeddings...")
     
 
     global all_embeddings, all_docs, category_indices, faiss_index
@@ -80,12 +52,29 @@ def populate_db():
     faiss_index = faiss.IndexFlatL2(dim)
     faiss_index.add(all_embeddings)
 
-    print(f"✅ Added {len(all_docs)} documents to FAISS index.")
+    print(f" Added {len(all_docs)} documents to FAISS index.")
+def retrieve_context(
+    category: str,
+    subject: str,
+    description: str,
+    top_k: int = 3,
+    attempt: int = 1,
+    classification_scores: list = None,
+    feedback: str = None,   
+):
+    """
+    Retrieve context passages given a category + query.
+    On retry, feedback is appended to the query to bias retrieval.
+    """
 
-def retrieve_context(category: str, subject: str, description: str, top_k: int = 3, attempt: int = 1, classification_scores: list = None):
     query_text = f"{subject} {description}"
+
+    if feedback:
+        query_text += f" | Reviewer feedback: {feedback}"
+
     query_embedding = embed_model.encode([query_text]).astype("float32")
 
+    # get docs for category
     start_idx, end_idx = category_indices.get(category, (0, len(all_docs)))
     category_embeddings = all_embeddings[start_idx:end_idx]
     category_docs = all_docs[start_idx:end_idx]
@@ -96,12 +85,14 @@ def retrieve_context(category: str, subject: str, description: str, top_k: int =
     distances, indices = temp_index.search(query_embedding, len(category_docs))
 
     print("retriever attempt:", attempt)
+    print("classification scores:", classification_scores)
+    print("feedback used:", feedback)
 
-    print(classification_scores)
-    if attempt == 0 or attempt==2: #if attempt is 2, it means that category i changed
-        selected = indices[0][:top_k]   # best matches
-
+    if attempt == 0 or attempt == 2:  
+        # normal — best matches
+        selected = indices[0][:top_k]
     else:
-        selected = indices[0][top_k:top_k+top_k]  # weaker matches
+        # retry — weaker matches
+        selected = indices[0][top_k:top_k + top_k]
 
     return [category_docs[i] for i in selected]

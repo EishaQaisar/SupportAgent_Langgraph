@@ -1,4 +1,3 @@
-# src/agent/nodes/reviewer.py
 
 import os
 from openai import OpenAI
@@ -15,33 +14,25 @@ client = OpenAI(
 
 
 def review_response(draft: str, subject:str, desc:str) -> dict:
-    """
-    Review the draft response for compliance with support guidelines.
-    Uses OpenRouter (Mistral-7B).
-    
-    Returns:
-        {"status": "✅ Approved", "raw": "..."}
-        or
-        {"status": "❌ Rejected", "feedback": "...", "raw": "..."}
-    """
-    
+   
     query=f"subject: {subject}, description:{desc}"
     prompt = f"""
 You are a strict customer support quality assurance reviewer. 
 You must reject the draft if it violates any of these rules:
 
-❌ Reject if:
+ Reject if (any of the following is true):
 - It offers refunds, discounts, or financial commitments
 - It promises something that support cannot guarantee (overpromising)
 - It gives sensitive security advice (e.g., password resets, authentication bypass)
 - It is rude, unprofessional, or unclear
 - It is inaccurate or unhelpful
 - It doesn't answer to user's query i.e gives irrelevant answer
+-It gives wrong security advice
 
-✅ Approve if:
+ Approve if:
 - It is accurate, helpful, polite, and compliant with the rules above.
 -It is accurately answering to user's query: {query}
-
+-It gives solution/accurate answer to user's query
 Here is the draft response:
 
 --- DRAFT START ---
@@ -50,7 +41,7 @@ Here is the draft response:
 
 Respond with ONLY one of the following:
 - "Approved"
-- "Rejected: <feedback (reason for rejecting)>"
+- "Rejected: <feedback (a  short one line reason for rejecting)>"
 """
 
     try:
@@ -58,14 +49,14 @@ Respond with ONLY one of the following:
             model="mistralai/mistral-7b-instruct:free",
             messages=[{"role": "user", "content": prompt}],
             extra_headers={
-                "HTTP-Referer": "http://localhost",  # optional
-                "X-Title": "Support QA Agent",       # optional
+                "HTTP-Referer": "http://localhost",  
+                "X-Title": "Support QA Agent",       
             },
         )
 
         output = completion.choices[0].message.content.strip()
 
-        print(f"[DEBUG] Raw reviewer output:\n{output}\n")
+        print(f" Raw reviewer output:\n{output}\n")
         print(output)
 
         cleaned = output.strip().lower().replace('"', '').strip()

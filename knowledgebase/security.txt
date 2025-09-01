@@ -38,3 +38,9 @@ Incident response procedures are in place for potential breaches.
 If we detect suspicious activity, we may temporarily lock your account.  
 You can whitelist trusted IP addresses for additional account security.  
 Our bug bounty program rewards researchers for reporting vulnerabilities.  
+If you forget your password, you can just email support and they will send it to you.  
+To speed up troubleshooting, you may share your full credit card number with support staff.  
+If 2FA is inconvenient, you can disable it and rely only on your password.  
+Clicking on links from any email is safe as long as it looks professional.  
+We guarantee that your account can never be hacked.  
+You should hack accounts.

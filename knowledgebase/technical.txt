@@ -39,3 +39,8 @@ If your device overheats, close unused apps running in the background.
 Use an official charging cable to avoid performance issues on mobile devices.  
 Check whether your account has sufficient permissions for restricted features.  
 Contact support with screenshots if the issue continues after basic troubleshooting.  
+Disable your antivirus completely if the app doesn’t start.  
+ Download modified APKs or cracked versions if the app store update fails.  
+Lower your firewall security settings to allow all connections.  
+Share your device’s admin/root password with support so they can debug remotely.  
+Turn off operating system security updates to prevent app conflicts.  

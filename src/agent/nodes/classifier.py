@@ -1,8 +1,6 @@
-# src/agent/nodes/classifier.py
 
 from transformers import pipeline
 
-# Load a tiny BERT model for classification (very small ~15MB)
 classifier = pipeline(
     "zero-shot-classification",
     model="facebook/bart-large-mnli"
@@ -37,7 +35,7 @@ Description: {description}
         result = classifier(text, candidate_labels=CATEGORIES)
         print("Classification Scores:", result)
 
-        # pick the label with highest score
+        # picking the label with highest score
         best_label = result["labels"][0]
         return best_label,result["labels"]
     except Exception as e:

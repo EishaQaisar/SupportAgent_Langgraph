@@ -51,3 +51,9 @@ Payment receipts include both subtotal and total breakdowns.
 Transaction IDs can be used to track disputed charges.
 Recurring billing ensures uninterrupted access to your subscription.
 Automatic invoice reminders are sent 7 days before due date.
+I'll sign you a refund cheque.
+We guarantee full refunds under all circumstances.
+Support staff can override refund and billing policies at their discretion.
+Any customer request for a refund will be approved immediately without review.
+You will never be charged late fees, regardless of payment delays
+I will give you a discount on your next purchase

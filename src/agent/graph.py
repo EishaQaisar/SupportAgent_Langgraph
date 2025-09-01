@@ -31,11 +31,10 @@ class State:
     review_status: str = field(default=None)
     review_feedback: dict = field(default_factory=dict)
     attempts: int = 0
-    category_changed: bool = False
     classification_scores: list = field(default_factory=list)  # store the ranking
 
 
-# ---------------------- NODES ----------------------
+# NODES:
 
 def classify_node(state: State, runtime: Runtime[Context]) -> Dict[str, Any]:
     # Reset for new submission
@@ -44,7 +43,6 @@ def classify_node(state: State, runtime: Runtime[Context]) -> Dict[str, Any]:
     state.review_feedback = {}
     state.docs = []
     state.drafts = {}
-    state.category_changed = False
     state.category = {}
     state.classification_scores = []
 
@@ -65,6 +63,7 @@ def retrieve_node(state: State, runtime: Runtime[Context]) -> Dict[str, Any]:
         raise ValueError("Category is not set. Classification must run before retrieval.")
 
     current_cat = state.category[state.attempts + 1]
+    feedback = state.review_feedback.get(state.attempts, "")
 
     docs = retrieve_context(
         current_cat,
@@ -72,7 +71,8 @@ def retrieve_node(state: State, runtime: Runtime[Context]) -> Dict[str, Any]:
         state.description,
         top_k=3,
         attempt=state.attempts,
-        classification_scores=state.classification_scores
+        classification_scores=state.classification_scores,
+        feedback=feedback   # <--- NEW
     )
     state.docs = docs
     print(f"[DEBUG] Retrieved docs: {docs}")
@@ -122,7 +122,6 @@ def refine_node(state: State, runtime: Runtime[Context]) -> Dict[str, Any]:
             second_best = scores[1]
             print(f"[DEBUG] Switching category to second best: {second_best}")
             state.category[state.attempts + 1] = second_best
-            state.category_changed = True
         else:
             state.category[state.attempts + 1] = state.category.get(state.attempts, "Unknown")
     else:
@@ -138,7 +137,7 @@ def route_after_review(state: State) -> str:
         state.attempts = 0
         return "__end__"
     if state.review_status and state.review_status.lower() == "rejected":
-        if state.attempts < 3:
+        if state.attempts < 2:
             return "refine_node"
         else:
             state.attempts = 0
@@ -147,7 +146,7 @@ def route_after_review(state: State) -> str:
 
 
 def escalate_node(state: State, runtime: Runtime[Context]) -> Dict[str, Any]:
-    print("⚠ Escalating to human after 3 failed attempts.")
+    print("⚠ Escalating to human after 2 failed attempts.")
     state.attempts = 0
     escalation_data = {
         "subject": state.subject,
@@ -175,7 +174,7 @@ def escalate_node(state: State, runtime: Runtime[Context]) -> Dict[str, Any]:
     return {"review_status": "Escalated to human support"}
 
 
-# ---------------------- GRAPH ----------------------
+# GRAPH:
 
 graph = (
     StateGraph(State, context_schema=Context)
