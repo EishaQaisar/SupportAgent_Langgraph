@@ -140,21 +140,21 @@ Shows ticket → retrieved docs → draft → review result.
 All dependencies are listed in requirements.txt.
 Key libraries include:
 
-langgraph
+#### langgraph
 
-openai
+#### openai
 
-transformers
+#### transformers
 
-sentence-transformers
+#### sentence-transformers
 
-faiss-cpu
+#### faiss-cpu
 
-numpy
+#### numpy
 
-python-dotenv
+#### python-dotenv
 
-streamlit
+#### streamlit
 
 ## 📌 Extensibility
 
