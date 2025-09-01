@@ -36,7 +36,6 @@ if submitted:
             result_state = run_ticket(subject, description)
 
         st.subheader("📌 Ticket Classification")
-        st.write(f"state: {result_state}")
         st.write(f"**Category:** {result_state["category"]}")
         st.write(f"**All Predictions:** {result_state["classification_scores"]}")
 
