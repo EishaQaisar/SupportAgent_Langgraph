@@ -66,7 +66,7 @@ streamlit run app.py
 
 This launches an interactive web UI for testing tickets.
 
-### 🧪 Testing the Agent
+## 🧪 Testing the Agent
 
 Submit tickets like:
 
@@ -78,23 +78,23 @@ Reviewer node will approve ✅ relevant, policy-compliant responses.
 
 Irrelevant or invalid responses will be rejected ❌ and retried (up to 2 times).
 
-### 🏗️ Design & Architectural Decisions
+## 🏗️ Design & Architectural Decisions
 
 The support agent is built as a LangGraph workflow with modular nodes:
 
-1. LangGraph Orchestration
+#### 1. LangGraph Orchestration
 
 Defines the workflow as a stateful graph.
 
 Steps: Classifier → Retriever → Draft Generator → Reviewer.
 
-2. Classifier (facebook/bart-large-mnli)
+#### 2. Classifier (facebook/bart-large-mnli)
 
 Classifies tickets into categories like Billing, Technical, General, Security.
 
 Uses facebook/bart-large-mnli, a strong NLI-based zero-shot classifier.
 
-3. Retriever (FAISS + SentenceTransformers)
+#### 3. Retriever (FAISS + SentenceTransformers)
 
 Embeds knowledge base docs using all-MiniLM-L6-v2.
 
@@ -102,7 +102,7 @@ Stores embeddings in FAISS for fast semantic similarity search.
 
 Returns top-k relevant docs for grounding.
 
-4. Draft Generator (Mistral-7B via OpenRouter)
+#### 4. Draft Generator (Mistral-7B via OpenRouter)
 
 Generates initial response drafts using Mistral-7B (served via OpenRouter).
 
@@ -110,11 +110,11 @@ Inputs: ticket, category, retrieved docs.
 
 Produces fluent, grounded draft responses.
 
-5. Reviewer (Mistral-7B via OpenRouter)
+#### 5. Reviewer (Mistral-7B via OpenRouter)
 
 Uses the same Mistral-7B LLM to evaluate draft quality.
 
-Validates:
+#### Validates:
 
 Accuracy
 
@@ -122,7 +122,7 @@ Professional tone
 
 Compliance (no refunds/promises without approval)
 
-6. Feedback Loop
+#### 6. Feedback Loop
 
 Reviewer rejection triggers refinement:
 
@@ -130,13 +130,13 @@ Feedback is injected back into retrieval + generation.
 
 Draft regeneration occurs (max 2 attempts).
 
-7. Streamlit UI
+#### 7. Streamlit UI
 
 Simple interface for testing without Postman/curl.
 
 Shows ticket → retrieved docs → draft → review result.
 
-### 📦 Requirements
+## 📦 Requirements
 
 All dependencies are listed in requirements.txt.
 Key libraries include:
@@ -157,7 +157,7 @@ python-dotenv
 
 streamlit
 
-### 📌 Extensibility
+## 📌 Extensibility
 
 Swap classifier (e.g., upgrade from bart-large-mnli to LLaMA-2).
 
@@ -167,7 +167,7 @@ Add more reviewer rules or integrate human-in-the-loop.
 
 Expand categories and knowledge base easily.
 
-### 🖼️ Workflow Diagram
+## 🖼️ Workflow Diagram
 flowchart TD
     A[Ticket] --> B[Classifier (bart-large-mnli)]
     B --> C[Retriever (FAISS + SentenceTransformers)]
@@ -176,19 +176,3 @@ flowchart TD
     E --✅ Approved--> F[Final Response]
     E --❌ Rejected--> C
 
-### 🙌 Acknowledgements
-
-LangGraph
- for workflow orchestration.
-
-SentenceTransformers
- for embeddings.
-
-FAISS
- for vector similarity search.
-
-Hugging Face
- for pretrained models.
-
-Streamlit
- for the quick testing UI.
