@@ -15,13 +15,41 @@ The agent can classify support tickets, retrieve relevant knowledge base docs, g
 - **Streamlit UI** → Interactive demo interface for testing the agent.  
 
 ---
+##Langraph Setup Instructions 
+Follow these steps to set up a LangGraph development environment locally:
+
+### 1. Install LangGraph CLI
+> Requires **Python >= 3.11**
+```bash
+pip install --upgrade "langgraph-cli[inmem]"
+```
+### 2. Create a LangGraph App
+```bash
+langgraph new AIAgent_Langraph --template new-langgraph-project-python
+```
+### 3. Install Dependencies
+
+Go into your new app directory and install in editable mode:
+```bash
+cd AIAgent_Langgraph
+pip install -e .
+```
+
+### 4. Create Environment File
+
+Copy .env.example to .env and add your API keys:
+```bash
+
+
+LANGSMITH_API_KEY=your_langsmith_key
+```
 
 ## ⚙️ Setup Instructions
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/your-username/ai-support-agent.git
-cd ai-support-agent
+git clone https://github.com/EishaQaisar/SupportAgent_Langgraph.git
+cd SupportAgent_Langgraph
  ```
 
 ### 2. Create Virtual Environment
