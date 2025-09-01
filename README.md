@@ -168,6 +168,8 @@ Add more reviewer rules or integrate human-in-the-loop.
 Expand categories and knowledge base easily.
 
 ## 🖼️ Workflow Diagram
+```mermaid
+
 flowchart TD
     A[Ticket] --> B[Classifier (bart-large-mnli)]
     B --> C[Retriever (FAISS + SentenceTransformers)]
