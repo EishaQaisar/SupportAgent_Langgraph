@@ -1,4 +1,3 @@
-README.md you can copy–paste:
 
 # 🛠️ AI Support Agent with LangGraph
 
@@ -171,10 +170,11 @@ Expand categories and knowledge base easily.
 ```mermaid
 
 flowchart TD
-    A[Ticket] --> B[Classifier (bart-large-mnli)]
-    B --> C[Retriever (FAISS + SentenceTransformers)]
-    C --> D[Draft Generator (Mistral-7B)]
-    D --> E[Reviewer (Mistral-7B)]
-    E --✅ Approved--> F[Final Response]
+    A["Ticket"] --> B["Classifier: bart-large-mnli"]
+    B --> C["Retriever: FAISS + SentenceTransformers"]
+    C --> D["Draft Generator: Mistral-7B"]
+    D --> E["Reviewer: Mistral-7B"]
+    E --✅ Approved--> F["Final Response"]
     E --❌ Rejected--> C
+
 
