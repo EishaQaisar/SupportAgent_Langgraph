@@ -48,8 +48,8 @@ def classify_node(state: State, runtime: Runtime[Context]) -> Dict[str, Any]:
 
     print(state.subject, state.description)
     best_label, scores = classify_ticket(state.subject, state.description)
-    print(f"[DEBUG] Classified as: {best_label}")
-    print(f"[DEBUG] Classification scores: {scores}")
+    print(f" Classified as: {best_label}")
+    print(f" Classification scores: {scores}")
 
     # Save attempt 1 category
     state.category[state.attempts + 1] = best_label
@@ -75,14 +75,14 @@ def retrieve_node(state: State, runtime: Runtime[Context]) -> Dict[str, Any]:
         feedback=feedback   # <--- NEW
     )
     state.docs = docs
-    print(f"[DEBUG] Retrieved docs: {docs}")
+    print(f" Retrieved docs: {docs}")
     return {"docs": docs}
 
 
 def draft_node(state: State, runtime: Runtime[Context]) -> Dict[str, Any]:
     current_cat = state.category[state.attempts + 1]
     draft = generate_draft(state.subject, state.description, current_cat, state.docs)
-    print(f"[DEBUG] Generated draft = {draft}")
+    print(f"Generated draft = {draft}")
     state.drafts[f"draft{state.attempts+1}"] = draft
     return {"drafts": state.drafts}
 
@@ -120,7 +120,7 @@ def refine_node(state: State, runtime: Runtime[Context]) -> Dict[str, Any]:
         scores = state.classification_scores
         if scores and len(scores) > 1:
             second_best = scores[1]
-            print(f"[DEBUG] Switching category to second best: {second_best}")
+            print(f" Switching category to second best: {second_best}")
             state.category[state.attempts + 1] = second_best
         else:
             state.category[state.attempts + 1] = state.category.get(state.attempts, "Unknown")
